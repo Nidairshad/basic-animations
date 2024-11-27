@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThisBouquetservice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Amatic+SC:wght@400;700&family=Elsie:wght@400;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .footer{
+            font-size: 2em;
+        }
+
+        .bgimage {
+            background-image: url('https://i.pinimg.com/enabled_lo_mid/736x/e1/bd/34/e1bd349c882ea164359b91007702a59e.jpg');
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Keeps the image centered */
+            background-attachment: fixed; /* Fixes the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            height: 100%;
+            width: 100%;
+            position: fixed; /* Fixes the image in place */
+            top: 0;
+            left: 0;
+            z-index:-1; /* Ensures the background stays behind the content */
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 15px;
+            padding: 15px 20px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #about {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            font-family: "Elsie";
+            opacity: 0.9; /* Increased opacity for the text */
+        }
+
+        .description {
+            display: flex;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            opacity: 1; /* Increased opacity for the description */
+            font-family: "Elsie";
+        }
+
+        .description .h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        /* Responsive design for smaller devices */
+        @media screen and (max-width: 768px) {
+            .navbar li {
+                display: block;
+                margin: 10px 0;
+                font-family: "Elsie";
+            }
+
+            .button button {
+                width: 100%;
+                padding: 15px 0;
+                font-size: 18px;
+                font-family: "Elsie";
+
+            }
+
+            #about, .description {
+                font-size: 16px;
+                font-family: "Elsie";
+            }
+        }
+        #mainheading{
+            font-family: "Aboreto";
+            font-size: 50px;
+            font-weight: 300;
+            transition: color .8s ease;
+;
+        }
+        #mainheading:hover{
+            color: brown;
+        }
+        #para1{
+            float: left;
+            border:solid beige;
+            padding:2px 10px 28px 0px ;
+            /* margin: 10px; */
+            text-align: center;
+            float: left;
+            width: 342px;
+            transition: background-color 0.1s, color 0.5s;}
+        #para1:hover{
+            color: rgb(244, 63, 127);
+            background-color: beige;
+        }
+        #para2{
+            float: left;
+            border:solid beige;
+            padding:2px 10px 28px 0px ;
+            text-align: center;
+             margin: 10px;
+            
+            width: 342px;
+            transition: background-color 0.1s, color 0.5s;}
+        #para2:hover{
+            color: rgb(244, 63, 127);
+            background-color: beige;
+        }
+            
+        
+        #para3{
+            float: left;
+            border:solid beige;
+            padding:2px 10px 28px 0px ;
+            text-align: center;
+            /* margin: 10px; */
+            width: 342px;
+            transition: background-color 0.1s, color 0.5s;
+            
+        }
+        #para3:hover{
+            color: rgb(244, 63, 127);
+            background-color: beige;
+        }
+        #para4{
+            float: left;
+            border:solid beige;
+            padding:2px 10px 28px 0px ;
+            text-align: center;
+             margin: 10px;
+            width: 342px;
+            transition: background-color 0.1s, color 0.5s;
+            
+        }
+        #para4:hover{
+            color: rgb(248, 42, 124);
+            background-color: beige;
+        }
+        #para5{
+            float: left;
+            border:solid beige;
+            padding:2px 10px 28px 0px ;
+            /* margin: 10px 0px 0px; */
+            text-align: center;
+            width: 342px;
+            transition: background-color 0.1s, color 0.5s;
+            
+        }
+        #para5:hover{
+            color: rgb(244, 63, 127);
+            background-color: beige;
+        }
+        .footer {
+            /* border: solid black; */
+            text-align: center;
+            /* margin: 51px 1px -1px 732px; */
+            font-family: "Elsie";
+            padding:10px 20px
+            color: white;
+            font-size: 2.5em;
+            /* width: 100px;
+            height: 100px; */
+            /* flex-direction: column; */
+            position: sticky;
+            opacity: 0.8; /* Increased opacity for footer */
+            animation: fadeIn 2s ease-in-out;}
+        #subfooter{
+            /* text-align: center; */
+            padding: 10px 20px;
+            /* margin: 18px 84px 29px 54px; */
+            color: rgb(79, 3, 3);
+            font-size: 20px;
+            font-family: "Elsie";
+            /* border: black solid; */
+            width: 100px;
+            height: 100px;
+            animation: slideUp 1.5s ease-in-out;
+            /* position: sticky; */
+            opacity: 0.8; /* Increased opacity for footer */
+        }
+        @keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+    </style>
+</head>
+<body>
+
+    <div class="bgimage"></div>
+
+    <div>
+        <ul class="navbar">
+            <li id="shop"><a href="#">Shop</a></li>
+            <li id="learnmore"><a href="#">Learn More</a></li>
+            <li id="Buisness"><a href="#">Buisness</a></li>
+            <li id="Support"><a href="#">Support</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="button">
+        <button>View products</button>
+    </div>
+
+    <div id="about">
+        We craft each bouquet with precision and care. Share your vision or occasion, and our experts will design a stunning arrangement using fresh, premium flowers. From concept to delivery, we ensure every detail reflects your sentiment beautifully.
+    </div>
+
+    <div class="description">
+        <p id="mainheading">How we Work?</p>
+        <div id="para1"><p class="h1" >Step 1: Sourcing the Finest Blooms</p>
+        &hearts; Our journey begins at 
+        lush fields and vibrant gardens,
+         where only the freshest, most
+          pristine flowers are handpicked 
+          at their peak bloom, ensuring unmatched 
+          quality and beauty.</div>
+        
+          <div id="para2"><p class="h1" >Step 2: Gentle Handling</p>
+            &hearts; Each flower is delicately handled with care, preserving its natural charm and freshness from the moment it is picked until it reaches our studio.</div>
+        
+            <div id="para3"><p class="h1">Step 3: Artful Curation</p>
+        &hearts; Our expert florists thoughtfully combine colors, textures, and fragrances, weaving your emotions into bespoke arrangements that tell a story.</div>
+        
+        <div id="para4"><p class="h1">Step 4: Personal Touch</p>
+        &hearts; Every bouquet is lovingly finished with a personal touch—hand-tied ribbons, elegant packaging, and a message card to make it uniquely yours.</div>
+        
+        <div id="para5"><p class="h1">Step 5: Timely Delivery</p>
+        &hearts; Your bouquet is delivered with utmost care, ensuring it arrives fresh and vibrant, ready to create memories and brighten moments.</div>
+    </div>
+
+    <p class="footer">Blossomia &hearts;<span id="subfooter">where flowers meet</span>
+    </p>
+    
+</body>
+</html>
