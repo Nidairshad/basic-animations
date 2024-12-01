@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+<style>
+    body {
+        display: flex;
+            font-family: "Lacquer";
+            font-size: 25px;
+            animation: lightAnimation 3s ease infinite;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg , #022a5b,#a2d4f8);
+            background-size: 400% 400%;
+            
+    }
+
+
+/* Animationhereee*/
+@keyframes lightAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25%{
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    #header{
+       
+        height: 30px;
+        width: 150px;
+        padding: 5px 31px 19px 48px;
+        margin: 14px 29px 20px 167px;
+        text-align: center;
+        font-size: 50px;
+    }
+    .box{
+        background-color: white;
+        border: solid black;
+        height: 690px;/*to change this*/
+        width :500px;
+        padding:41px 53px 27px 57px;
+        margin :130px 5px 13px -262px;
+        border-radius: 100px;
+        box-shadow:34px 21px 30px 25px rgba(0, 0, 0, 0.5)
+        }
+    #upperbar{
+        border: solid black;
+        height:100px;
+        width: 490px;
+        border-radius: 40px;
+    }
+    #innerbar{
+        border: solid black;
+        height:50px;
+        width: 450px;
+        border-radius: 40px;
+        padding:4px 37px 8px 0px;
+        margin:12px 0px 0px 0px;
+        text-align: right;
+    }
+    
+    
+    #circlebtn1,#circlebtn2,#circlebtn3{
+        display: inline-flex;
+        border: solid black;
+        height: 47px;
+        width:47px;
+        border-radius: 50px;
+        justify-content: space-between;
+
+    }
+    #sqbtn1,#sqbtn2,#sqbtn3{
+        float:right;
+        display: inline-flex;
+        border: solid black;
+        height: 40px;
+        width:40px;
+        padding: 0px 0px 0px 0px;
+        margin:-51px 11px 7px 0px;
+        font-size:15px;
+    }
+
+.main {
+    
+    display: grid; /* Switch to grid layout*/
+    grid-template-rows: auto auto;
+    grid-template-columns: (1fr); 
+    grid-gap: 20px ; /*  spacing between boxes */
+    justify-content: center;
+    align-items: center;
+   /* padding: 20px;*/
+    margin:30px 25px 11px 18px; ;
+    gap: 20px;
+}
+.numbers{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);/*3 col for num*/
+    gap: 15px;
+ 
+}
+
+ .operators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; /* Space between */
+    text-align: center;
+    font-size: 24px;
+}
+
+    
+#num1,#num2,#num3,#num4,#num5,#num6,
+    #num7,#num8,#num9,#num0,#add,#subtract,#divide
+    ,#multiply,#equalsto{
+        display: flex;
+        border: solid black;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        height: 66px;
+        width :53px;
+        border-radius: 5px;
+        align-items: center;
+      
+}
+
+</style>
+    
+</head>
+<body>
+    
+    <header id="header">Calculate:</header>
+    <div class="box">
+    <div id = "upperbar">
+    <div id = "innerbar"></div>
+    </div>
+    <div class="circlebtn">
+    <div id="circlebtn1"></div>
+    <div id="circlebtn2"></div>
+    <div id="circlebtn3"></div>
+    </div>
+    <div class="sqbtn">
+        <div id="sqbtn1">del</div>
+        <div id="sqbtn2">reset</div>
+        <div id="sqbtn3">on/off</div>
+        <div id="sqbtn4">.</div> <!--give this one space to right-->
+    </div>
+    <div class="main">
+        <div class="numbers">
+            <div id="num1">1</div>
+            <div id="num2">2</div>
+            <div id="num3">3</div>
+            <div id="num4">4</div>
+            <div id="num5">5</div>
+            <div id="num6">6</div>
+            <div id="num7">7</div>
+            <div id="num8">8</div>
+            <div id="num9">9</div>
+            <div id="num0">0</div>
+        </div>
+        <div class="operators">
+            <div id="add">+</div>
+            <div id="subtract">-</div>
+            <div id="divide">/</div>
+            <div id="multiply">x</div>
+            <div id ="equalsto">=</div>
+        </div>
+    </div>
+    </div>
+    
+    <script>
+        
+        let display = document.getElementById('innerbar');
+let currentInput = '';
+let currentOperator = '';
+let currentValue = 0;
+let isOn = true; // Keep track of the on/off state
+
+// Function to update the display
+function updateDisplay() {
+    display.textContent = currentInput || currentValue;
+}
+
+// Function to handle button clicks
+function handleButtonClick(value) {
+    if (!isOn) return; // If the calculator is of do nothing
+
+    if (['+', '-', '/', 'x'].includes(value)) {
+        
+        if (currentInput) {
+            currentInput += value;
+        }
+    } else if (value === '=') {
+        
+        try {
+            currentValue = eval(currentInput.replace('x', '*').replace('/', '/'));
+            currentInput = currentValue.toString();
+        } catch {
+            currentInput = 'Error';
+        }
+    } else if (value === 'del') {
+        // Delete
+        currentInput = currentInput.slice(0, -1);
+    } else if (value === 'reset') {
+        //Reset
+        currentInput = '';
+        currentValue = 0;
+    } else if (value === '.') {
+        //decimal point
+        if (!currentInput.includes('.')) {
+            currentInput += '.';
+        }
+    } else if (value === 'on/off') {
+        //on off
+        isOn = !isOn;
+        if (!isOn) {
+            currentInput = '';
+            currentValue = 0;
+            display.textContent = 'OFF';
+        } else {
+            updateDisplay();
+        }
+    } else {
+        //Add num to input
+        currentInput += value;
+    }
+
+    updateDisplay();
+}
+
+// Add event listeners hereee
+document.querySelectorAll('.numbers div, .operators div, .sqbtn div').forEach(button => {
+    button.addEventListener('click', () => {
+        handleButtonClick(button.textContent);
+    });
+});
+
+// Reset the input when the page loads..
+updateDisplay();
+
+
+document.querySelectorAll('.numbers div, .operators div, .sqbtn div').forEach(button => {
+    button.style.cursor = 'pointer'; // Set pointer cursor for all buttons
+    button.addEventListener('mouseover', () => {
+        button.style.cursor = 'url("https://cdn-icons-png.flaticon.com/512/61/61453.png"), auto'; // Stylish custom cursor
+    });
+    button.addEventListener('mouseout', () => {
+        button.style.cursor = 'pointer'; 
+    });
+});
+
+    </script>
+    
+    
+</body>
+</html>
