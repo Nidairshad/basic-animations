@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zain:wght@400;700;800;900&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background-image: url(https://i.pinimg.com/736x/6e/e9/9a/6ee99a1f6df9a277ac1445b6b67e03cf.jpg);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                height: 100vh;
+                display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            font-family: "Zain";
+            }
+            .verticalbar{
+                width: 2.5px;
+            height: 100px;
+            background-color: rgb(250, 250, 250);
+            margin: 20px 218px 22px 33px;
+  padding: 20px 4px 47px 47px;
+}
+            
+            
+            .header{
+                display: flex;
+                padding: 12px 16px 21px 53px;
+                margin: 6px -47px 4px 99px;
+                border: solid white;
+
+                font-size:45px ;
+                position: relative;
+            left: -300px; /* Initially off-screen to the left */
+            animation: slideIn 3.5s forwards;
+        }
+
+        @keyframes slideIn {
+            100% {
+                left: 0; /* Move to the original position */
+            }
+        }
+            
+
+            .main{
+                display: flex;
+                border: solid white;
+                padding: 7px 20px 30px 40px;
+                margin : 10px 10px 10px -255px;
+                height: 80px;
+                width: 260px;
+                font-size: 25px;
+                
+                position: relative;
+            right: -300px; /* Initially off-screen to the right */
+            animation: slideInRight 3s forwards;
+        }
+
+        @keyframes slideInRight {
+            100% {
+                right: 0; /* Move to the original position */
+            }
+        }
+            /*responsive design here*/
+            @media screen and (max-width: 768px) {
+            .bg-image {
+                height: 80vh; /* Adjust height on smaller screens */
+            }
+            h1 {
+                font-size: 3em; /* Smaller font size for tablets ig */
+            }
+            p {
+                font-size: 1.2em; /* Smaller font size for table*/
+            }
+        }
+
+        /* for Mobile Devices */
+        @media screen and (max-width: 480px) {
+            .bg-image {
+                height: 70vh; 
+            }
+            h1 {
+                font-size: 2.5em; /* Smol font size for mobile */
+            }
+            p {
+                font-size: 1em; /* smallfont size for mobile */
+            }
+        }
+
+        </style>
+    </head>
+    
+    <body>
+        
+
+<h1 class="header">ERROR 404 <br>!یہاں مسئلہ ہو گیا ہے</h1>
+<div class="verticalbar"></div>
+<p class="main" lang="ur">آپ یہاں نہیں جا سکتے کیونکہ مجھے آگے کا نہیں آتا، محترم۔</p>
+
+
+    </body>
+</html>
