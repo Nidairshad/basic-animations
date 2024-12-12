@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Button</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            height: 100vh; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-image: url(https://i.pinimg.com/236x/9f/90/d4/9f90d419d11ee8c3462f5051dc24c6d2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-family: "Oswald", sans-serif;
+        }
+
+        button {
+            font-family: "Oswald", sans-serif; 
+            font-size: 2em;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 3.4px solid white;
+            background: transparent;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            border-radius: 45px;
+            box-shadow: 15px 20px 0px 5px rgba(0, 0, 0, 0.3); 
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        
+        button:hover {
+            color: rgb(242, 242, 242);
+            border-radius: 45px;
+            background-color: grey;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+            transform: translatey(-20px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: contain;
+                background-position: center top;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Click Me</button>
+</body>
+</html>
