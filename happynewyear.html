@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+        }
+        .main {
+            font-family: "Righteous", sans-serif;
+            background-color: rgb(164, 178, 178);
+            text-align: center;
+            font-size: 4.5em;
+        }
+        #firstmsg{
+            padding: 27px 18px 39px 17px;
+            margin: 139px 5px 13px 25px;
+            display: inline-block;
+            color: rgb(0, 86, 234);
+            animation: up 5s infinite ;
+            font-size: 2.1em;
+        }
+        #firstmsg a {
+            text-decoration: none;
+            color: black;
+            
+        }
+
+
+        #secondmsg {
+             background-color: rgb(164, 178, 178);
+            color: rgb(1, 1, 1);
+            margin-top: 20px;
+            font-size: 0.75em;
+            animation: move 10s linear infinite;
+            animation-delay: 0.5s;
+            position:relative;
+            padding: 25px 139px 24px 125px;
+            margin: 46px 18px 14px 158px;
+            border: 12px solid rgb(8, 8, 6);
+        }
+        
+        @keyframes zoomEffect {
+          
+            0%,100% {
+                transform: scale(1.30);
+            }
+        }
+        /*for second msg*/
+        @keyframes move {
+            0%{left :100%}
+            100% {left: -100%};
+           
+           
+            10%,20%,40%,60%,80%{transform: scale(1.30)
+            };
+           
+            }
+            
+        
+        @keyframes up {
+            0%,100%{
+                transform:translateY(100px);
+            }
+            
+            35%,20%{transform: scale(1.30)
+            };
+            10% {
+                transform:translateX(20px);
+            }
+            
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="firstmsg">
+            <a href="#">
+                <span id="word1-1">Happy</span>
+                <span id="word2-1">  new</span>
+                <span id="word3-1"> year</span>
+            </a>
+        </div>
+        <div id="secondmsg">BYE BYE 2024 WELCOME 2025</div>
+    </div>
+</body>
+</html>
